@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Planner</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --text: #1f2937;
+      --accent: #4f46e5;
+      --shadow: rgba(0, 0, 0, 0.05);
+      --done: #10b981;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--accent);
+    }
+
+    form {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    select, input[type="text"], button {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--accent);
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #4338ca;
+    }
+
+    .day-header {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      color: #374151;
+    }
+
+    .task {
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+      background: white;
+      padding: 0.75rem 1rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .task.done {
+      opacity: 0.6;
+      text-decoration: line-through;
+      border-left-color: var(--done);
+    }
+
+    .task-actions button {
+      margin-left: 10px;
+      font-size: 0.85rem;
+      background: #e5e7eb;
+      color: #1f2937;
+    }
+
+    .task-actions button.complete {
+      background: var(--done);
+      color: white;
+    }
+
+    .task-actions button.remove {
+      background: #ef4444;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 Study Planner</h1>
+  <form id="taskForm">
+    <div class="form-group">
+      <label for="day">Day:</label>
+      <select id="day">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+
+      <input type="text" id="time" placeholder="Time (e.g. 4–5 PM)" required />
+      <input type="text" id="description" placeholder="Task description" required />
+      <button type="submit">Add Task</button>
+    </div>
+  </form>
+
+  <div id="taskDisplay"></div>
+
+  <script>
+    const tasks = {
+      Monday: [], Tuesday: [], Wednesday: [], Thursday: [], Friday: [], Saturday: [], Sunday: []
+    };
+
+    const taskForm = document.getElementById('taskForm');
+    const taskDisplay = document.getElementById('taskDisplay');
+
+    taskForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const day = document.getElementById('day').value;
+      const time = document.getElementById('time').value;
+      const description = document.getElementById('description').value;
+
+      if (day && time && description) {
+        tasks[day].push({ time, description, done: false });
+        displayTasks();
+        taskForm.reset();
+      }
+    });
+
+    function displayTasks() {
+      taskDisplay.innerHTML = '';
+      for (const [day, dayTasks] of Object.entries(tasks)) {
+        const daySection = document.createElement('div');
+        const header = document.createElement('div');
+        header.className = 'day-header';
+        header.textContent = `📅 ${day}`;
+        daySection.appendChild(header);
+
+        if (dayTasks.length === 0) {
+          const empty = document.createElement('div');
+          empty.className = 'task';
+          empty.textContent = 'No tasks.';
+          daySection.appendChild(empty);
+        } else {
+          dayTasks.forEach((task, index) => {
+            const taskItem = document.createElement('div');
+            taskItem.className = 'task' + (task.done ? ' done' : '');
+
+            const content = document.createElement('span');
+            content.textContent = `🕒 ${task.time} - ${task.description}`;
+            taskItem.appendChild(content);
+
+            const actions = document.createElement('div');
+            actions.className = 'task-actions';
+
+            const completeBtn = document.createElement('button');
+            completeBtn.textContent = task.done ? 'Undo' : 'Done';
+            completeBtn.className = 'complete';
+            completeBtn.onclick = () => {
+              task.done = !task.done;
+              displayTasks();
+            };
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Remove';
+            removeBtn.className = 'remove';
+            removeBtn.onclick = () => {
+              tasks[day].splice(index, 1);
+              displayTasks();
+            };
+
+            actions.appendChild(completeBtn);
+            actions.appendChild(removeBtn);
+            taskItem.appendChild(actions);
+
+            daySection.appendChild(taskItem);
+          });
+        }
+        taskDisplay.appendChild(daySection);
+      }
+    }
+
+    displayTasks();
+  </script>
+</body>
+</html>
