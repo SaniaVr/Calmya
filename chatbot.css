@@ -1,0 +1,118 @@
+body {
+  margin: 0; /* Removes default body margin */
+  padding: 0; /* Removes default body padding */
+  background-image: url('pictures/chatbg.png');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  height: 100vh; /* Ensures it covers the entire viewport height */
+  overflow: hidden; /* Prevents scrollbars from appearing unnecessarily */
+}
+
+.chat-container {
+    max-width: 600px;
+    margin: 50px auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    margin-top: 200px;
+  }
+  
+  .chat-header {
+    padding: 10px;
+    background: #0a0a0a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+
+  .chat-header button{
+    background: red;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: auto;
+    
+  }
+  
+  
+  .chat-box {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    background: #f9f9f9;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .chat-input button {
+    background: #111211;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  /* General chatbox styling */
+#chat-box {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Message container styles */
+.message-container {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels for User and Calmya */
+.message-label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+/* User message styling */
+.user-container {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.user-msg {
+  background-color: #daf8e3;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+/* Calmya message styling */
+.bot-container {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.bot-msg {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
