@@ -33,5 +33,6 @@ With a modular and scalable architecture, Calmya is easy to contribute to, exten
 - 🧑‍⚕️ Mental health professional directory  
 - 📬 Anonymous feedback module  
 
-<h1>Folder Structure</h1>
+## **Contributing/Running the Project Locally**
+<a href="https://github.com/SaniaVr/Calmya/tree/main">Calmya ~ AI mental health chatbot for university students</a>
 
