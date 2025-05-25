@@ -10,14 +10,16 @@ Using React.js and TailwindCSS on the frontend, paired with Node.js, Supabase, a
 
 With a modular and scalable architecture, Calmya is easy to contribute to, extend, or adapt for your own campus or community. It's more than just an app—it's a companion built by students who understand the silent pressures of academic life.
 </p>
+![image](https://github.com/user-attachments/assets/e99512f1-7d31-4052-8590-33450498881e)
 
 <h1>Technologies Used</h1>
 
 - 🧠 <b>NLP & Sentiment Analysis:</b> Python  
 - 💬 <b>Conversational AI:</b> OpenAI GPT models, Hugging Face Transformers  
 - 🎨 <b>Frontend:</b> HTML, CSS  
-- ⚙️ <b>Backend & Database:</b> Express.js, Firebase  
+- ⚙️ <b>Backend & Database:</b> Express.js  
 - 🔐 <b>Security:</b> End-to-end encryption, anonymized data storage  
+![image](https://github.com/user-attachments/assets/4f0d392e-c7d8-4824-9627-2f6b6b6571dc)
 
 <h1>Key Features</h1>
 
@@ -29,6 +31,7 @@ With a modular and scalable architecture, Calmya is easy to contribute to, exten
 - 🚨 Integrated SOS/crisis helplines  
 - 🧑‍⚕️ Mental health professional directory  
 - 📬 Anonymous feedback module  
+![image](https://github.com/user-attachments/assets/502e355b-e989-4462-b849-987f84dbc0fa)
 
 ## **Contributing/Running the Project Locally**
 <a href="https://github.com/SaniaVr/Calmya/tree/main">Calmya ~ AI mental health chatbot for university students</a>
