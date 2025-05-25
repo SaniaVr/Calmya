@@ -10,7 +10,9 @@ Using React.js and TailwindCSS on the frontend, paired with Node.js, Supabase, a
 
 With a modular and scalable architecture, Calmya is easy to contribute to, extend, or adapt for your own campus or community. It's more than just an app—it's a companion built by students who understand the silent pressures of academic life.
 </p>
-![image](https://github.com/user-attachments/assets/e99512f1-7d31-4052-8590-33450498881e)
+
+![image](https://github.com/user-attachments/assets/bba3467a-2b6c-4fd8-9381-4a349c60b28b)
+
 
 <h1>Technologies Used</h1>
 
