@@ -6,7 +6,7 @@
 <p>
 <b>Calmya</b> is a modern, open-source mental wellness web app crafted for university students. It offers a supportive space for managing stress, tracking emotions, organizing study routines, and reaching out for help—privately and easily. Designed with a focus on calm aesthetics, accessibility, and emotional intelligence, Calmya features an AI-powered chatbot, mood journal, Pomodoro-style focus timer, and built-in mental health tools like a depression screening module and SOS hotline access. 
 
-Using React.js and TailwindCSS on the frontend, paired with Node.js, Supabase, and Firebase on the backend, Calmya delivers smooth real-time interactions and secure data handling. The chatbot leverages Hugging Face's NLP models for emotion detection and context-aware support, offering a comforting presence when students need someone to "talk" to. The planner and journaling tools help build mindfulness, while the help directory connects users to real professionals if things get heavy.
+Using React.js and TailwindCSS on the frontend, paired with Node.js on the backend, Calmya delivers smooth real-time interactions and secure data handling. The chatbot leverages Hugging Face's NLP models for emotion detection and context-aware support, offering a comforting presence when students need someone to "talk" to. The planner and journaling tools help build mindfulness, while the help directory connects users to real professionals if things get heavy.
 
 With a modular and scalable architecture, Calmya is easy to contribute to, extend, or adapt for your own campus or community. It's more than just an app—it's a companion built by students who understand the silent pressures of academic life.
 </p>
@@ -16,7 +16,8 @@ With a modular and scalable architecture, Calmya is easy to contribute to, exten
 
 <h1>Technologies Used</h1>
 
-- 🧠 <b>NLP & Sentiment Analysis:</b> Python  
+- 🧠 <b>NLP & Sentiment Analysis:</b> Python
+- 🔐 <b>APIs Used:</b> Hugging Face, YouTube Data API, ZenQuotes
 - 💬 <b>Conversational AI:</b> OpenAI GPT models, Hugging Face Transformers  
 - 🎨 <b>Frontend:</b> HTML, CSS  
 - ⚙️ <b>Backend & Database:</b> Express.js  
@@ -25,7 +26,7 @@ With a modular and scalable architecture, Calmya is easy to contribute to, exten
 
 <h1>Key Features</h1>
 
-- 🤖 AI Chatbot with emotion analysis  
+- 🤖 AI Chatbot with emotion analysis- suggests meditation exercises and Motivational quotes  
 - 🧘‍♀️ Pomodoro & meditation timer  
 - 🎨 Mood board & journaling  
 - 📚 Drag-and-drop study planner  
